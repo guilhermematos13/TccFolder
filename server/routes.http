@@ -1,0 +1,25 @@
+# @name Hello
+GET http://localhost:3333
+
+###
+
+# @name Prompts
+GET http://localhost:3333/prompts
+
+###
+
+# @name TopicSelection
+GET http://localhost:3333/selection-topic
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+   "selections": ["Culinaria", "Pontos turisticos"],
+   "localization": "São Paulo",
+   "temperature": 0.5,
+   "prompt": "Seu papel é gerar sem um roteiro de viagem para {localization} de acordo com os tópicos sinalizados: '''{selections}'''"
+}

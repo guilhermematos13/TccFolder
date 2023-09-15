@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Prompt {
+  id       String @id @default(uuid())
+  template String
+}
+
+model TopicSelection {
+  id    String @id @default(uuid())
+  title String
+}
