@@ -18,8 +18,10 @@ POST http://localhost:3333/ai/complete
 Content-Type: application/json
 
 {
-   "selections": ["Culinaria", "Pontos turisticos"],
-   "localization": "São Paulo",
+   "selections": ["Pontos turisticos"],                                             
+   "localization": "Espirito Santo",
+   "startDate": "13/09/2023",
+   "endDate": "14/09/2023",
    "temperature": 0.5,
-   "prompt": "Seu papel é gerar sem um roteiro de viagem para {localization} de acordo com os tópicos sinalizados: '''{selections}'''"
+   "prompt": "Seu papel é gerar uma roteiro breve e sem muitos detalhes de viagem para {localization} do dia {startDate} até o dia {endDate}, com os seguintes pontos importantes: {selections}"
 }

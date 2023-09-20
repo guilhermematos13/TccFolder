@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "tsx watch src/server.ts"
   },
+  "engines": {
+    "node": "18.16.0",
+    "npm": "9.x.x"
+  },
   "author": "",
   "license": "ISC",
   "prisma": {
@@ -14,15 +18,17 @@
   "devDependencies": {
     "@types/node": "^20.6.1",
     "dotenv": "^16.3.1",
-    "prisma": "^5.3.1",
-    "tsx": "^3.12.10",
+    "prisma": "^5.2.0",
+    "tsx": "^3.12.9",
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@fastify/cors": "^7.0.0",
     "@prisma/client": "^5.3.1",
-    "ai": "^2.2.12",
+    "ai": "^2.2.13",
     "fastify": "^4.23.2",
-    "openai": "^4.7.1",
+    "fastify-cors": "^6.1.0",
+    "openai": "^4.6.0",
     "zod": "^3.22.2"
   }
 }

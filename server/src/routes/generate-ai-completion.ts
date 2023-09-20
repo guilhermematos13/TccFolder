@@ -1,8 +1,7 @@
 import { FastifyInstance } from "fastify";
 import { z } from "zod";
-// import { streamToResponse, OpenAIStream } from "ai";
-import { prisma } from "../lib/prisma";
-import { openai } from '../lib/openai'
+import { streamToResponse, OpenAIStream } from "ai";
+import { openai } from "../lib/openai";
 
 export async function generateAiCompletionRoute(app: FastifyInstance) {
   app.post("/ai/complete", async (req, reply) => {
@@ -11,28 +10,35 @@ export async function generateAiCompletionRoute(app: FastifyInstance) {
       localization: z.string(),
       prompt: z.string(),
       temperature: z.number().min(0).max(1).default(0.5),
+      startDate: z.string(),
+      endDate: z.string(),
     });
 
-    const { selections, prompt, temperature, localization } = bodySchema.parse(req.body);
+    const { selections, prompt, temperature, localization, startDate, endDate } = bodySchema.parse(req.body);
     
+    const promptMessage = prompt.replace('{selections}', selections.join(', ')).replace('{localization}', localization).replace('{startDate}', startDate).replace('{endDate}', endDate)
 
-    const promptMessage = prompt.replace('{selections}', selections.join(', ')).replace('{localization}', localization)
+    
+      const response = await openai.chat.completions.create({
+        model: "gpt-3.5-turbo-16k",
+        temperature,
+        messages: [{ role: "user", content: promptMessage }],
+        // stream: true,
+      });
 
-    const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo-16k",
-      temperature,
-      messages: [{ role: "user", content: promptMessage }],
-    });
+      // for await (const part of response) {
+      //   process.stdout.write(part.choices[0]?.delta?.content || '');
+      // }
+      
+      // const stream = OpenAIStream(response)
+      
+      // streamToResponse(stream, reply.raw, {
+      //     headers: {
+      //         "Access-Control-Allow-Origin": "*",
+      //         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      //       }
+      //     });
 
-    return response
-
-    // const stream = OpenAIStream(response);
-
-    // streamToResponse(stream, reply.raw, {
-    //   headers: {
-    //     "Access-Control-Allow-Origin": "*",
-    //     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-    //   },
-    // });
+      return response.choices[0].message.content
   });
 }
