@@ -69,6 +69,10 @@ export const theme = {
       "accordion-down": "accordion-down 0.2s ease-out",
       "accordion-up": "accordion-up 0.2s ease-out",
     },
+    backgroundImage: {
+      'card-gradient':
+          'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 67.08%)',
+    }
   },
 };
 // eslint-disable-next-line no-undef

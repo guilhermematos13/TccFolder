@@ -14,7 +14,11 @@ export function InfoSide() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-xs text-foreground md:text-sm xl:text-base">Quem somos?</AccordionTrigger>
                     <AccordionContent className="text-xs text-foreground md:text-sm xl:text-base">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sequi aliquid autem dolorum incidunt doloribus totam! Minima doloribus iste, labore numquam, iure perferendis beatae nemo corrupti hic molestias ipsa tenetur.
+                        Somos um grupo de seis estudantes apaixonados por tecnologia, unidos pela jornada da
+                        faculdade de Sistemas de Informação. Nossa amizade e determinação nasceram nas salas de aula,
+                        onde superamos desafios juntos. Este site é nosso espaço para tornar a tecnologia mais amigável,
+                        compartilhando conhecimento de forma envolvente.
+                        Queremos inspirar e conectar, transformando a aprendizagem em uma experiência cativante.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
@@ -22,7 +26,13 @@ export function InfoSide() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-xs text-foreground md:text-sm xl:text-base">Objetivo do Trabalho.</AccordionTrigger>
                     <AccordionContent className="text-xs text-foreground md:text-sm xl:text-base">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sequi aliquid autem dolorum incidunt doloribus totam! Minima doloribus iste, labore numquam, iure perferendis beatae nemo corrupti hic molestias ipsa tenetur.
+                        O objetivo deste projeto foi explorar a capacidade da API da OpenAI para gerar roteiros
+                        de viagem personalizados e envolventes. Nossa meta era criar uma ferramenta que pudesse
+                        gerar itinerários únicos com base em preferências individuais e dados de localização, proporcionando
+                        aos viajantes uma experiência de planejamento de viagem mais conveniente e enriquecedora. Combinando a
+                        inteligência artificial com informações de destinos turísticos, esperávamos demonstrar como a
+                        tecnologia pode melhorar a experiência de viagem, oferecendo sugestões personalizadas que atendam às
+                        necessidades e interesses de cada indivíduo, tornando suas viagens memoráveis e únicas.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
@@ -30,7 +40,11 @@ export function InfoSide() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-xs text-foreground md:text-sm xl:text-base">Motivo da escolha do tema.</AccordionTrigger>
                     <AccordionContent className="text-xs text-foreground md:text-sm xl:text-base">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sequi aliquid autem dolorum incidunt doloribus totam! Minima doloribus iste, labore numquam, iure perferendis beatae nemo corrupti hic molestias ipsa tenetur.
+                        O motivo da escolha deste tema se baseia na importância da tecnologia de geração de texto,
+                        como a API da OpenAI. Essa tecnologia tem se destacado recentemente, tornando-se uma
+                        escolha atraente para explorar sua aplicação no contexto do planejamento de viagens.
+                        A seleção desse tema visa demonstrar como a tecnologia avançada pode ser usada de maneira
+                        prática e benéfica, apresentando um exemplo concreto de seu potencial.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

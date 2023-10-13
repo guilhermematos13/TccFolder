@@ -38,14 +38,14 @@ export const positions: IPositions[] = [
   },
   {
     id: 5,
-    linkedin: "#",
+    linkedin: "matheus-araujo-bianchini",
     name: "Matheus Bianchini",
     nameInitials: "MB",
     position: "Modelagem",
   },
   {
     id: 6,
-    linkedin: "#",
+    linkedin: "felipe-araujo-bianchini",
     name: "Felipe Bianchini",
     nameInitials: "FB",
     position: "Pesquisas",
