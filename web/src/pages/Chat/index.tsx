@@ -80,11 +80,19 @@ export function Chat() {
         }
     };
 
+    const getSelectTopic = async () => {
+        try {
+            const response = await api.get('/selection-topic')
+
+            setOptions(response.data)
+        } catch(e) {
+            console.log(e)
+        }
+
+    }
+
     useEffect(() => {
-        api.get('/selection-topic')
-            .then(response => {
-                setOptions(response.data)
-            })
+        getSelectTopic()
     }, [])
 
     return (
