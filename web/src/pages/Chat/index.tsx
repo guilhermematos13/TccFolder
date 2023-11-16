@@ -122,7 +122,7 @@ export function Chat() {
 
                 </div>
                 <aside>
-                    <div className="space-y-6 mt-6 mr-4">
+                    <div className="space-y-6 mt-6 mr-4 w-20 sm:w-28 md:w-64 lg:w-80">
                         <form onSubmit={(event) => { handleSubmit(event) }} className="space-y-6">
                             <div>
                                 <Label className="text-foreground text-xs md:text-sm">Modelo</Label>
@@ -147,11 +147,11 @@ export function Chat() {
                                     value={place}
                                 />
                             </div>
-                            <div>
+                            <div className="flex items-center justify-start gap-1 flex-col md:flex-row md:gap-2 lg:gap-4">
                                 <Label className="text-foreground text-xs md:text-sm" htmlFor="city">Dia da viagem:</Label>
                                 <DatePicker date={startDate} setDate={setStartDate} />
                             </div>
-                            <div>
+                            <div className="flex items-center justify-start gap-1 flex-col md:flex-row md:gap-2 lg:gap-4">
                                 <Label className="text-foreground text-xs md:text-sm" htmlFor="city">Retorno da Viagem</Label>
                                 <DatePicker date={endDate} setDate={setEndDate} />
                             </div>
@@ -173,7 +173,7 @@ export function Chat() {
                                 <span className="mt-1 block text-xs text-foreground italic">Se você não selecionar nenhum a IA irá trazer de tudo um pouco!</span>
                             </div>
                             <Separator />
-                            <div className="space-y-4 w-80">
+                            <div className="space-y-4 w-16 sm:w-28 md:w-64 lg:w-80">
                                 <Label className="text-foreground">Criatividade</Label>
                                 <Slider
                                     className="bg-foreground"
