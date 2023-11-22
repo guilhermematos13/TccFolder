@@ -31,8 +31,7 @@ export function SheetForm() {
     const [endDate, setEndDate] = useState<Date>()
     const [options, setOptions] = useState<IOptions[]>([])
     const [selectedOptions, setSelectedOptions] = useState<string[]>([])
-    // const [IAResponse, setIAResponse] = useState()
-
+    
     function formatData(data: Date) {
         if (data) {
             const day = String(data.getDate()).padStart(2, '0');

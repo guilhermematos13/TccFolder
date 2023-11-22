@@ -88,7 +88,6 @@ export function Chat() {
         } catch(e) {
             console.log(e)
         }
-
     }
 
     useEffect(() => {
@@ -104,10 +103,10 @@ export function Chat() {
                         <>
                             <div className="w-full flex items-center justify-center gap-2">
                                 <div className="flex flex-col gap-2">
-                                    <Skeleton className="h-4 w-[100px]" />
-                                    <Skeleton className="h-4 w-[300px]" />
-                                    <Skeleton className="h-4 w-[400px]" />
-                                    <Skeleton className="h-4 w-[500px]" />
+                                    <Skeleton className="h-4 w-[2rem]" />
+                                    <Skeleton className="h-4 w-[4rem]" />
+                                    <Skeleton className="h-4 w-[8rem]" />
+                                    <Skeleton className="h-4 w-[10rem]" />
                                 </div>
                             </div>
                         </> :
@@ -147,11 +146,11 @@ export function Chat() {
                                     value={place}
                                 />
                             </div>
-                            <div className="flex items-center justify-start gap-1 flex-col md:flex-row md:gap-2 lg:gap-4">
+                            <div className="flex items-start justify-start gap-1 flex-col md:gap-2 lg:gap-4">
                                 <Label className="text-foreground text-xs md:text-sm" htmlFor="city">Dia da viagem:</Label>
                                 <DatePicker date={startDate} setDate={setStartDate} />
                             </div>
-                            <div className="flex items-center justify-start gap-1 flex-col md:flex-row md:gap-2 lg:gap-4">
+                            <div className="flex items-start justify-start gap-1 flex-col md:gap-2 lg:gap-4">
                                 <Label className="text-foreground text-xs md:text-sm" htmlFor="city">Retorno da Viagem</Label>
                                 <DatePicker date={endDate} setDate={setEndDate} />
                             </div>
