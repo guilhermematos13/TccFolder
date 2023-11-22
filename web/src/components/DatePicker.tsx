@@ -15,9 +15,10 @@ import {
 interface DatePickerProps {
     date: Date | undefined
     setDate: React.Dispatch<React.SetStateAction<Date | undefined>>
+    placeholder: string
 }
 
-export function DatePicker({ date, setDate }: DatePickerProps) {
+export function DatePicker({ date, setDate, placeholder }: DatePickerProps) {
 
     const isDayDisabled = (day: Date) => {
         return day < new Date();
@@ -25,18 +26,18 @@ export function DatePicker({ date, setDate }: DatePickerProps) {
 
     return (
         <Popover>
-            <PopoverTrigger asChild>
+            <PopoverTrigger className="w-20 md:w-full flex justify-start" asChild>
                 <Button
                     variant={"outline"}
                     className={cn(
-                        "text-left font-normal text-foreground",
+                        " font-normal text-xs md:text-sm text-foreground",
                     )}
                 >
                     <CalendarIcon className="mr-2 h-4 w-4 text-foreground" />
-                    {date ? format(date, "dd/MM/yy") : <span className="text-foreground">Selecione uma data</span>}
+                    {date ? format(date, "dd/MM/yy") : <span className="text-foreground invisible md:visible">{placeholder}</span>}
                 </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
+            <PopoverContent align="start">
                 <Calendar
                     locale={ptBR}
                     mode="single"

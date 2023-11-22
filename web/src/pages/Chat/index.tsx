@@ -100,25 +100,22 @@ export function Chat() {
                 <InfoSide />
                 <div className="w-3/5 grid grid-row-2 gap-4 flex-1">
                     {isLoading ?
-                        <>
                             <div className="w-full flex items-center justify-center gap-2">
                                 <div className="flex flex-col gap-2">
-                                    <Skeleton className="h-4 w-[2rem]" />
-                                    <Skeleton className="h-4 w-[4rem]" />
-                                    <Skeleton className="h-4 w-[8rem]" />
-                                    <Skeleton className="h-4 w-[10rem]" />
+                                    <Skeleton className="h-4 w-14" />
+                                    <Skeleton className="h-4 w-20" />
+                                    <Skeleton className="h-4 w-32" />
+                                    <Skeleton className="h-4 w-40" />
                                 </div>
                             </div>
-                        </> :
-                        <>
+                         :
                             <Textarea
                                 className="resize-none p-4 leading-relaxed text-foreground text-xs md:text-sm lg:text-base"
                                 placeholder="Resposta gerada pela IA"
                                 readOnly
                                 value={IAResponse}
                             />
-                        </>}
-
+                        }
                 </div>
                 <aside>
                     <div className="space-y-6 mt-6 mr-4 w-20 sm:w-28 md:w-64 lg:w-80">
@@ -148,11 +145,11 @@ export function Chat() {
                             </div>
                             <div className="flex items-start justify-start gap-1 flex-col md:gap-2 lg:gap-4">
                                 <Label className="text-foreground text-xs md:text-sm" htmlFor="city">Dia da viagem:</Label>
-                                <DatePicker date={startDate} setDate={setStartDate} />
+                                <DatePicker placeholder="Qual o dia da viagem?" date={startDate} setDate={setStartDate} />
                             </div>
                             <div className="flex items-start justify-start gap-1 flex-col md:gap-2 lg:gap-4">
                                 <Label className="text-foreground text-xs md:text-sm" htmlFor="city">Retorno da Viagem</Label>
-                                <DatePicker date={endDate} setDate={setEndDate} />
+                                <DatePicker placeholder="Qual o dia do retorno?" date={endDate} setDate={setEndDate} />
                             </div>
                             <div>
                                 <Label className="text-foreground text-xs md:text-sm">Selecione</Label>
