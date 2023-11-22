@@ -6,7 +6,7 @@ import { generateAiCompletionRoute } from "./routes/generate-ai-completion";
 const app = fastify();
 
 app.addHook('preHandler', (request, reply, done) => {
-  reply.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+  reply.header('Access-Control-Allow-Origin', 'http://localhost:3000');
   reply.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   reply.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
